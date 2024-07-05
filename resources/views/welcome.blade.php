@@ -299,7 +299,7 @@
 
             
           </p>
-          <a href="{{asset('assets/img/cv/hassin_cv.pdf')}}" download><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
+          <a href="{{URL::asset('assets/img/cv/hassin_cv.pdf')}}" download><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
         </div>
       </div>
 
@@ -313,7 +313,7 @@
             {{trans('main.Expert-panel-2-text')}}.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
-          <a href="{{asset('assets/img/cv/Sahar_cv.pdf')}}"download><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
+          <a href="{{URL::asset('assets/img/cv/Sahar_cv.pdf')}}"download><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
         </div>
       </div>
 
