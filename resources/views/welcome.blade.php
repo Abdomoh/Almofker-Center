@@ -328,7 +328,7 @@
 .            {{trans('main.Expert-panel-4-text')}}.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
-          <a href="{{URL::asset('assets/img/cv/C.V Hamad Arabic.pdf')}}" download="C.V Hamad Arabic">
+          <a href="{{URL::asset('assets/img/cv/cv_Hamad_Arabic.pdf')}}" download="C.V Hamad Arabic">
             <h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
         </div>
       </div>
