@@ -60,22 +60,27 @@ For consultations, research and public opinion polling',
   'Expert-panel-4' => 'Dr. Hamad Al-Jazouli is chivalry',
   'Expert-panel-5' => 'Dr.Rashid Al-Tijani Suleiman',
 
-  'Expert-panel-1-title'=>' Department of Political Science ',
-  'Expert-panel-1-text'=>'education
+  'Expert-panel-1-title' => ' Department of Political Science ',
+  'Expert-panel-1-text' => 'education
  1992- PhD, Political Science, University of North Texas, United States. 1985- Master’s, Political Science, University 
  of Missouri-Columbia, United States. 1981- Bachelor of Law, University of Khartoum',
-  'Expert-panel-2-title'=>'Department of Political Science  ',
-  'Expert-panel-2-text'=>'Education
+  'Expert-panel-2-title' => 'Department of Political Science  ',
+  'Expert-panel-2-text' => 'Education
 2011 ​PhD in Political Science, Faculty of Economic and Social Studies, University Of Khartoum.        
 1995 ​M.A in Developing Area Studies, University of Hull, United Kingdom,
 1989 ​B. Sc (Honors) Political Science(Public Administration), Faculty of Economic and Social Studies, University of Khartoum.
 1988 ​​B .Sc of Economic and Social Science, University of Khartoum.
 ',
-  'Expert-panel-3-title'=>'',
-  'Expert-panel-3-text'=>'',
-  'Expert-panel-4-title'=>'',
-  'Expert-panel-4-text'=>'',
-  'Expert-panel-4-text'=>'',
+  'Expert-panel-3-title' => '',
+  'Expert-panel-3-text' => '',
+  'Expert-panel-4-title' => 'Lecturer at National Ribat University / Refugee Certified - former',
+  'Expert-panel-4-text' => 'Ph.D. under process
+(Entitled: The impact of the voluntary return of Sudanese refugees from Chad on stability
+In Darfur (after graduation, I joined the Ministry of Agriculture/Agricultural Extension (Al-Ailfoun) for one year. I worked as a refugee commissioner in Khartoum from February 2012 until March 2019.',
+  'Expert-panel-5-title' => 'political science',
+  'Expert-panel-5-text' => 'Bachelor’s degree in Political Science, Omdurman Islamic University, in 1996, with a very good grade.
+Higher Diploma in Political Sciences, Al-Nilein University, in 1999, with excellent grade.
+Higher Diploma in Education, Al-Nilein University in 2002, with an excellent grade',
   'features-title' => 'We are committed to the success of our customers from the beginning of the idea until its success and making it a brand.',
   'features-1' => 'sensitive data protection',
   'features-2' => 'Customer satisfaction is the secret of our success',
@@ -132,7 +137,7 @@ For consultations, research and public opinion polling',
 
   'Useful-Links' => 'Useful Links ',
   'Our-Services' => 'Our Services',
-  'cv'=>'download cv',
+  'cv' => 'download cv',
 
 
 

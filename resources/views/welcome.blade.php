@@ -8,7 +8,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);   opacity: 0.5;" dir="ltr">
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);   " dir="ltr">
           <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp">
               <h2><span>{{ trans('main.mofker-center') }}</span></h2>
@@ -298,8 +298,8 @@
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 
             
-          </p>
-          <a href="../assets/img/cv/hassin_cv.pdf" download=""><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
+          </p>&nbsp;
+          <a href="{{ URL::asset('assets/img/cv/hassin_cv.pdf') }}" download=""><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
         </div>
       </div>
 
@@ -313,10 +313,42 @@
             {{trans('main.Expert-panel-2-text')}}.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
-          <a href="../assets/img/cv/Sahar_cv.pdf" download=""><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
+          <a href="{{URL::asset('assets/img/cv/Sahar_cv.pdf')}}" download=""><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
         </div>
       </div>
 
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="testimonial-item mt-4">
+          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+          <h3>{{trans('main.Expert-panel-4')}}</h3>
+          <h4>{{trans('main.Expert-panel-4-title')}}</h4>
+          <p>
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+.            {{trans('main.Expert-panel-4-text')}}.
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+          </p>
+          <a href="{{URL::asset('assets/img/cv/C.V Hamad Arabic.pdf')}}" download="C.V Hamad Arabic">
+            <h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="testimonial-item mt-4">
+          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
+          <h3>{{trans('main.Expert-panel-5')}}</h3>
+          <h4>{{trans('main.Expert-panel-5-title')}}</h4>
+          <p>
+            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+            {{trans('main.Expert-panel-5-text')}}.
+            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+          </p>
+          <a href="{{URL::asset('assets/img/cv/Rashid_cv.pdf')}}" download="Rashid_cv">
+            <h3 class="text-primary"><i class="bi bi-download" >{{trans('main.cv')}}</i></h3></a>
+        </div>
+      </div>
+
+      
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
         <div class="testimonial-item mt-4">
           <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
@@ -327,35 +359,7 @@
             Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
           </p>
-          <a href=""><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="testimonial-item mt-4">
-          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-4')}}</h3>
-          <h4>Freelancer</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href=""><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="testimonial-item mt-4">
-          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-5')}}</h3>
-          <h4>Entrepreneur</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href=""><i class="bi bi-download"> {{trans('main.cv')}}</i></a>
+          <a href=""><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
         </div>
       </div>
 
