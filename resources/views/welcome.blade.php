@@ -284,6 +284,10 @@
 
 <section id="team" class="testimonials section-bg">
   <div class="container">
+    <div class="section-title">
+      <h2>{{trans('main.Expert-panel')}}</h2>
+     
+    </div>
 
     <div class="row">
 
