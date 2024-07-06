@@ -442,11 +442,11 @@
 <div class="whatsapp-icon">
         
         
-  <a href="https://wa.link/j8i23b"><span class="ico-circle"><i class="bi bi-whatsapp"style="bottom: 10px;
-  right: 10px;
-   left: 10px;
+  <a href="https://wa.link/klzlry"><span class="ico-circle"><i class="bi bi-whatsapp"style="bottom: 20px;
+  right: 20px;
+   left: 20px;
 position: fixed;
-width: 100px;height:100px;color:#1bbd36; size:30px;"></i></span></a>
+width: 100px;height:100px;color:#1bbd36; size:100px;"></i></span></a>
   
 </div> 
 
