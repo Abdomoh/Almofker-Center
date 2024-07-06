@@ -439,6 +439,15 @@
 
   </div>
 </section><!-- End Contact Section -->
+<div class="whatsapp-icon">
+        
+        
+  <a href="https://wa.link/j8i23b"><span class="ico-circle"><i class="bi bi-whatsapp"style="bottom: 14px;
+  right: 25px;
+position: fixed;
+width: 110px;height:110px;color:#1bbd36; size:60px;"></i></span></a>
+  
+</div> 
 
 
  </main><!-- End #main -->
