@@ -446,7 +446,7 @@
   right: 20px;
    left: 20px;
 position: fixed;
-width: 100px;height:100px;color:#1bbd36; size:100px;"></i></span></a>
+width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
   
 </div> 
 
@@ -472,6 +472,7 @@ width: 100px;height:100px;color:#1bbd36; size:100px;"></i></span></a>
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>{{trans('main.Useful-Links')}}</h4>
             <ul>
+              
               <li><i class="bx bx-chevron-right"></i> <a href="{{url('/')}}">{{__('main.home')}}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#about">{{__('main.about')}}</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#team">{{__('main.Expert-panel')}}</a></li>
