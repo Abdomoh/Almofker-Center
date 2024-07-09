@@ -59,7 +59,7 @@
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-        <h1><a href="{{url('/')}}"><span> <img src="{{URL::asset('assets/img/logo/logo.jpg')}}" width="60px" alt="الالوان السبعة"></span></a></h1>
+        <h1><a href="{{url('/')}}"><span> <img src="{{URL::asset('assets/img/logo/logo.jpg')}}" width="60px" alt="مركز المفكر "></span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
       </div>
@@ -78,7 +78,7 @@
             @foreach (Config::get('languages') as $lang => $language)
             @if ($lang != App::getLocale())
             <a class="btn btn-outline my-2 rounded " href="{{ route('lang.switch', $lang) }}">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/800px-Flag_of_Saudi_Arabia.svg.png" width="40px"><span class="text-dark mx-2 lang">{{$language['display']}}</span> </a>
+              <img src="{{asset($language['img'])}}" width="40px"><span class="text-dark mx-2 lang">{{$language['display']}}</span> </a>
             @endif
             @endforeach
           </li>

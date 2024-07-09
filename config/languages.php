@@ -6,6 +6,7 @@ return [
     ],
     'en' => [
         'display' => 'English',
-        'img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/800px-Flag_of_Saudi_Arabia.svg.png'
-    ],
+        'img' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/American_Flag_Waving_on_a_Flag_Pole.jpg/270px-American_Flag_Waving_on_a_Flag_Pole.jpg'
+    ]
+        
 ];
