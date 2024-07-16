@@ -8,10 +8,19 @@ use App\Models\About;
 use App\Models\Category;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use App\Traits\ApiResponser;
+use App\Traits\SlugTrait;
+use App\Traits\TranslationTrait;
+use DataTables;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 class AboutController extends Controller
 {
+  
+    use ApiResponser;
+    use SlugTrait;
+    use TranslationTrait;
     /**
      * Display a listing of the resource.
      *
@@ -44,25 +53,45 @@ class AboutController extends Controller
     public function store(StoreAboutRequest $request)
     {
           
-        $validator = $request->validated();
-        $input=$request->all();
-        $abouts = About::create($input);
-       // dd($abouts);
+        $input = $request->validated();
+        $about = About::create($input);
+        $input['slug'] = $this->createSlug('About', $about->id, $about->title, 'abouts');
+
         if ($request->file('logo')) {
-            $image_name = md5($abouts->id . "app" . $abouts->id . rand(1, 1000));
+            $image_name = md5($about->id . "app" . $about->id . rand(1, 1000));
+
             $image_ext = $request->file('logo')->getClientOriginalExtension(); // example: png, jpg ... etc
+
             $image_full_name = $image_name . '.' . $image_ext;
-            $uploads_folder =  getcwd() . '/uploads/';
+
+            $uploads_folder =  getcwd() . '/uploads/abouts';
+
             if (!file_exists($uploads_folder)) {
                 mkdir($uploads_folder, 0777, true);
             }
             $request->file('logo')->move($uploads_folder, $image_name  . '.' . $image_ext);
-            $abouts->logo = $image_full_name;
+            $about->logo =  $image_full_name;
         }
-      
+        if ($request->file('image')) {
+            $image_name = md5($about->id . "app" . $about->id . rand(1, 1000));
+
+            $image_ext = $request->file('image')->getClientOriginalExtension(); // example: png, jpg ... etc
+
+            $image_full_name = $image_name . '.' . $image_ext;
+
+            $uploads_folder =  getcwd() . '/uploads/abouts';
+
+            if (!file_exists($uploads_folder)) {
+                mkdir($uploads_folder, 0777, true);
+            }
+            $request->file('image')->move($uploads_folder, $image_name  . '.' . $image_ext);
+            $about->image =  $image_full_name;
+        }
+   
+   
        
-        $abouts->save();
-        //toastr()->success('تم تسجيل الدخول');
+        $about->save();
+        $this->translate($request, 'Vision', $about->id);
         session::flash('success', 'تمت   الاضافة  بنجاح ');
         return redirect('abouts');
 
@@ -101,21 +130,37 @@ class AboutController extends Controller
     {
         $validator = $request->validated();
         $input=$request->all();
-        $abouts = About::find($id);
+        $about = About::find($id);
        // dd($abouts);
-       $abouts->update($input);
+       $about->update($input);
         if ($request->file('logo')) {
-            $image_name = md5($abouts->id . "app" . $abouts->id . rand(1, 1000));
+            $image_name = md5($about->id . "app" . $about->id . rand(1, 1000));
             $image_ext = $request->file('logo')->getClientOriginalExtension(); // example: png, jpg ... etc
             $image_full_name = $image_name . '.' . $image_ext;
-            $uploads_folder =  getcwd() . '/uploads/';
+            $uploads_folder =  getcwd() . '/uploads/abouts';
             if (!file_exists($uploads_folder)) {
                 mkdir($uploads_folder, 0777, true);
             }
             $request->file('logo')->move($uploads_folder, $image_name  . '.' . $image_ext);
-            $abouts->logo = $image_full_name;
+            $about->logo = $image_full_name;
         }
-        $abouts->save();
+        if ($request->file('image')) {
+            $image_name = md5($about->id . "app" . $about->id . rand(1, 1000));
+
+            $image_ext = $request->file('image')->getClientOriginalExtension(); // example: png, jpg ... etc
+
+            $image_full_name = $image_name . '.' . $image_ext;
+
+            $uploads_folder =  getcwd() . '/uploads/abouts';
+
+            if (!file_exists($uploads_folder)) {
+                mkdir($uploads_folder, 0777, true);
+            }
+            $request->file('image')->move($uploads_folder, $image_name  . '.' . $image_ext);
+            $about->image =  $image_full_name;
+        }
+        $about->save();
+        $this->editTranslation($request, 'About', $about->id);
         session::flash('success', 'تم   التعديل  بنجاح ');
         return redirect('abouts');
       
@@ -129,8 +174,17 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        $abouts = About::find($id);
-        $abouts->delete();
+        $about = About::find($id);
+        if($about->image)
+        {
+            File::delete(public_path()."upload/abouts".$about->image);
+        }
+       // $about->delete();
+        if($about->logo)
+        {
+            File::delete(public_path()."upload/abouts".$about->logo);
+        }
+        $about->delete();
         session::flash('delete', 'تم الحزف بنجاح');
         return back();
     }

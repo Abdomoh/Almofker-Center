@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
+            $table->string('title')->nullable();
+            $table->longText('description')->nullable();
+            $table->string('slug')->nullable();
             $table->string('logo')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
@@ -23,6 +25,7 @@ return new class extends Migration
             $table->string('facebook')->nullable();
             $table->string('Instagram')->nullable();
             $table->string('tweeter')->nullable();
+            $table->text('image')->nullable();
             $table->timestamps();
         });
     }

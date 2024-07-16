@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AboutController;
 use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ViewController;
+use App\Http\Controllers\Admin\VisionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
 
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('abouts', AboutController::class);
+    Route::resource('visions', VisionController::class);
     Route::resource('works', WorkController::class);
     Route::get('work/{id}', [WorkController::class, 'getShowWork']);
     Route::get('visits', [ViewController::class, 'index']);

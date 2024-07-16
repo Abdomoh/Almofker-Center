@@ -40,15 +40,25 @@
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
         <div class="row">
+   
           <div class="col-lg-6 about-img">
+            @if(empty($abouts->image))
             <img src="assets/img/services/ob-4.svg" alt="">
+            @else
+            <img src="uploads/abouts/{{$abouts->image ?? ''}}" alt="">
+            @endif
           </div>
   
           <div class="col-lg-6 content">
-            <h2> {{__('main.about')}}</h2>
-            <h3> {{__('main.about-title')}}</h3>
-  
-            <p>{{__('main.about-text')}}</p>
+            @if(App::getLocale()=='en')
+            <h2> {{$abouts->title ?? ''}}</h2>
+            <h3> {{$abouts->title ?? ''}}</h3>
+            <p>{{$abouts->description ??''}}</p>
+            @else
+            <h2> {{$abouts->title_ar ?? ''}}</h2>
+            <h3> {{$abouts->title_ar ??''}}</h3>
+            <p>{{$abouts->description_ar ??''}}</p>
+            @endif
   
           </div>
         </div>
@@ -69,7 +79,7 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a href="">{{ trans('main.Vision') }}</a></h4>
+              <h4><a href="">{{$visions->vision}}</a></h4>
               <p>{{ trans('main.visison-text') }}</p>
             </div>
           </div>
@@ -82,7 +92,7 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">{{trans('main.message-center')}}</a></h4>
+              <h4><a href="">{{$visions->message}}</a></h4>
               <p>{{trans('main.messge-text')}}</p>
             </div>
           </div>
@@ -95,7 +105,7 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a href="">{{trans('main.values')}} </a></h4>
+              <h4><a href="">{{$visions->values}} </a></h4>
               <p>{{trans('main.value-text')}}</p>
             </div>
           </div>

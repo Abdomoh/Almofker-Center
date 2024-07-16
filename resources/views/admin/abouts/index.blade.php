@@ -16,7 +16,7 @@
 <div class="breadcrumb-header justify-content-between">
     <div class="my-auto">
         <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">معلومات الشركة </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ ااضافة
+            <h4 class="content-title mb-0 my-auto">معلومات المركز </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ ااضافة
                 معلومات </span>
         </div>
     </div>
@@ -35,7 +35,7 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>&nbsp;اضافة بيانات الشركة </button><br><br>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>&nbsp;اضافة بيانات المركز </button><br><br>
                 </div>
             </div>
             <div class="card-body">
@@ -44,8 +44,12 @@
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">اسم الشركة</th>
+                                <th class="border-bottom-0">اسم المركز</th>
+                                <th class="border-bottom-0"> الاسم بالعربي</th>
+                                <th class="border-bottom-0"> الوصف </th>
+                                <th class="border-bottom-0"> الوصف بالعربي</th>
                                 <th class="border-bottom-0">الشعار</th>
+                                <th class="border-bottom-0">صورة</th>
                                 <th class="border-bottom-0">الهاتف</th>
                                 <th class="border-bottom-0">الايميل</th>
                                 <th class="border-bottom-0">رابط الواتس</th>
@@ -63,8 +67,13 @@
                             @foreach($abouts as $about)
                             <tr>
                                 <td>{{$about->id}}</td>
-                                <td>{{$about->name}}</td>
-                                <td data-toggle="modal" data-target="#img_show{{$about->id}}"><img src="../uploads/{{$about->logo}}" width="40px" class="rounded-circle">
+                             
+                                <td>{{$about->title}}</td>
+                                <td>{{$about->title_ar}}</td>
+                                <td>{!! Str::limit($about->description,30) !!}</td>
+                                <td>{!! Str::limit($about->description_ar,30) !!}</td>
+                                <td data-toggle="modal" data-target="#img_show{{$about->id}}"><img src="../uploads/abouts/{{$about->logo}}" width="40px" class="rounded-circle">
+                                    <td data-toggle="modal" data-target="#img_show{{$about->id}}"><img src="../uploads/abouts/{{$about->image}}" width="40px" class="rounded-circle">
                                 <td>{{$about->phone}}</td>
                                 <td>{{$about->email}}</td>
                                 <a href="{{$about->whatsapp}}">
@@ -112,16 +121,36 @@
                                                     <div class="form-row">
 
                                                         <div class="form-group col-md-6">
-                                                            <label> اسم الشركة : <span class="text-danger">*</span></label>
-                                                            <input type="text" name="name" class="form-control" id="inputEmail5" value="{{$about->name}}">
-                                                            @error('name')
+                                                            <label> اسم المركز بالعربي : <span class="text-danger">*</span></label>
+                                                            <input type="text" name="title_ar" class="form-control" id="inputEmail5" value="{{$about->title_ar}}">
+                                                            @error('title_ar')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label> شعار الشركة : <span class="text-danger">*</span></label>
+                                                            <label> اسم المركز بالانجليزي : <span class="text-danger">*</span></label>
+                                                            <input type="text" name="title" class="form-control" id="inputEmail5" value="{{$about->title}}">
+                                                            @error('title')
+                                                            <span class="form-text text-danger">{{ $message }}</s>
+                                                                @enderror
+                                                        </div>
+                                                       
+                                                    </div>
+
+
+                                                    <div class="form-row">
+
+                                                        <div class="form-group col-md-6">
+                                                            <label> شعار المركز : <span class="text-danger">*</span></label>
                                                             <input type="file" name="logo" class="form-control" id="inputEmail5" value="{{$about->logo}}">
                                                             @error('logo')
+                                                            <span class="form-text text-danger">{{ $message }}</s>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label> صورة  : <span class="text-danger">*</span></label>
+                                                            <input type="file" name="image" class="form-control" id="inputEmail5" value="{{$about->image}}">
+                                                            @error('image')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
                                                         </div>
@@ -179,11 +208,29 @@
                                                         </div>
 
                                                     </div>
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <label>  الوصف بالعربي : <span class="text-danger">*</span></label>
+                                                            <textarea type="text" name="description_ar" class="form-control" id="inputEmail5" >{{$about->description_ar}}</textarea>
+                                                            @error('description_ar')
+                                                            <span class="form-text text-danger">{{ $message }}</s>
+                                                                @enderror
+
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <label>  الوصف بالانجليزي : <span class="text-danger">*</span></label>
+                                                            <textarea type="text" name="description" class="form-control" id="inputEmail5" >{{$about->description}}</textarea>
+                                                            @error('description')
+                                                            <span class="form-text text-danger">{{ $message }}</s>
+                                                                @enderror
+
+                                                        </div>
+                                                    </div>
 
 
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
-                                                            <button type="submit" class="btn btn-info x-small" value="Add shipping Address"> <i class="fa fa-plus"></i> اضافة</button>
+                                                            <button type="submit" class="btn btn-primary x-small" value="Add shipping Address"> <i class="fa fa-plus"></i> تعديل</button>
                                                             <button type="reset" class="btn btn-warning x-small" value="Add shipping Address"><i class="fa fa-share"></i>مسح </button>
                                                         </div>
                                                     </div>
@@ -192,7 +239,27 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                                 <!-- end edit model -->
+
+                                     <!--  logo- show -->
+                                     <div class="modal fade" id="img_show{{$about->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+    
+                                                <div class="modal-body">
+    
+    
+                                                <center><img src="../uploads/abouts/{{$about->logo}}" width="400px" class="rounded-circle"></center>
+    
+    
+                                                </div>
+    
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                    <!-- logo show -->
 
                                 <!--  img- show -->
                                 <div class="modal fade" id="img_show{{$about->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -202,7 +269,7 @@
                                             <div class="modal-body">
 
 
-                                            <center><img src="../uploads/{{$about->logo}}" width="400px" class="rounded-circle"></center>
+                                            <center><img src="../uploads/abouts/{{$about->image}}" width="400px" class="rounded-circle"></center>
 
 
                                             </div>
@@ -219,7 +286,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title" id="exampleModalLabel">
-                                                    حذف بيانات الشركة
+                                                    حذف بيانات المركز
                                                 </h5>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
@@ -229,7 +296,7 @@
                                                 <form action="{{route('abouts.destroy',$about->id)}}" method="post">
                                                     {{ method_field('Delete') }}
                                                     @csrf
-                                                    هل تريد حذف بيانات الشركة ؟!
+                                                    هل تريد حذف بيانات المركز ؟!
                                                     <input id="id" type="hidden" name="id" class="form-control" value="{{$about->id}}">
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">اغلاق</button>
@@ -266,15 +333,54 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-6">
-                                    <label> اسم الشركة : <span class="text-danger">*</span></label>
-                                    <input type="text" name="name" class="form-control" id="inputEmail5" value="{{old('name')}}">
-                                    @error('name')
+                                    <label> اسم المركز بالعربي : <span class="text-danger">*</span></label>
+                                    <input type="text" name="title_ar" class="form-control" id="inputEmail5" value="{{old('name')}}">
+                                    @error('title_ar')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label> شعار الشركة : <span class="text-danger">*</span></label>
+                                    <label> اسم المركز بالانجليزي : <span class="text-danger">*</span></label>
+                                    <input type="text" name="title" class="form-control" id="inputEmail5" value="{{old('name')}}">
+                                    @error('title')
+                                    <span class="form-text text-danger">{{ $message }}</s>
+                                        @enderror
+                                </div>
+                               
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>  الوصف بالعربي : <span class="text-danger">*</span></label>
+                                    <textarea type="text" name="description_ar" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{old('description_ar')}}"></textarea>
+                                    @error('description')
+                                    <span class="form-text text-danger">{{ $message }}</s>
+                                        @enderror
+
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>  الوصف بالانجليزي : <span class="text-danger">*</span></label>
+                                    <textarea type="text" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{old('description')}}"></textarea>
+                                    @error('description_ar')
+                                    <span class="form-text text-danger">{{ $message }}</s>
+                                        @enderror
+
+                                </div>
+                              
+                            </div>
+
+                            <div class="form-row">
+
+                                <div class="form-group col-md-6">
+                                    <label> شعار المركز : <span class="text-danger">*</span></label>
                                     <input type="file" name="logo" class="form-control" id="inputEmail5" value="{{old('logo')}}">
+                                    @error('logo')
+                                    <span class="form-text text-danger">{{ $message }}</s>
+                                        @enderror
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>  صورة  : <span class="text-danger">*</span></label>
+                                    <input type="file" name="image" class="form-control" id="inputEmail5" value="{{old('image')}}">
                                     @error('logo')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
