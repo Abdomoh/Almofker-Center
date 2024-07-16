@@ -79,8 +79,8 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a href="">{{$visions->vision}}</a></h4>
-              <p>{{ trans('main.visison-text') }}</p>
+              <h4><a href="">{{ trans('main.Vision') }}</a></h4>
+              <p>{{ $visions->vision ?? '' }}</p>
             </div>
           </div>
 
@@ -92,8 +92,8 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">{{$visions->message}}</a></h4>
-              <p>{{trans('main.messge-text')}}</p>
+              <h4><a href="">{{trans('main.message-center')}}</a></h4>
+              <p>{{$visions->message ?? '' }}</p>
             </div>
           </div>
 
@@ -105,8 +105,8 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a href="">{{$visions->values}} </a></h4>
-              <p>{{trans('main.value-text')}}</p>
+              <h4><a href="">{{trans('main.values')}} </a></h4>
+              <p>{{$visions->values ?? '' }}</p>
             </div>
           </div>
         </div>
