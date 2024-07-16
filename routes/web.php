@@ -20,7 +20,7 @@ use App\Http\Controllers\LocalizationController;
 */
 
 Route::get('lang/{lang}', [LocalizationController::class, 'index'])->name('lang.switch');
-Route::view('/', 'welcome')->middleware(['throttle:visit','visit']);
+Route::view('/', 'welcome');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
