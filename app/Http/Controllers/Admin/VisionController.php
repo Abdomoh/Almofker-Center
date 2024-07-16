@@ -47,7 +47,7 @@ class VisionController extends Controller
         $vision->save();
         $this->translate($request, 'Vision', $vision->id);
         session::flash('success', 'تمت   الاضافة  بنجاح ');
-        return redirect('visions');
+        return redirect('dashboard/visions');
     }
 
     /**
@@ -88,7 +88,7 @@ class VisionController extends Controller
         $vision->save();
         $this->editTranslation($request, 'Vision', $vision->id);
         session::flash('success', 'تم   التعديل  بنجاح ');
-        return redirect('visions');
+        return redirect('dashboard/visions');
     }
 
     /**

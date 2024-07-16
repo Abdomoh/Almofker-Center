@@ -93,7 +93,7 @@ class AboutController extends Controller
         $about->save();
         $this->translate($request, 'Vision', $about->id);
         session::flash('success', 'تمت   الاضافة  بنجاح ');
-        return redirect('abouts');
+        return redirect('dashboard/abouts');
 
     }
 
@@ -162,7 +162,7 @@ class AboutController extends Controller
         $about->save();
         $this->editTranslation($request, 'About', $about->id);
         session::flash('success', 'تم   التعديل  بنجاح ');
-        return redirect('abouts');
+        return redirect('dashboard/abouts');
       
     }
 
