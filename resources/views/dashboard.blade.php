@@ -45,12 +45,12 @@
         <div class="card overflow-hidden sales-card bg-primary-gradient">
             <div class="pl-3 pt-3 pr-3 pb-2 pt-0">
                 <div class="">
-                    <h4 class="mb-3 tx-15 text-white">عدد المنتجات</h4>
+                    <h4 class="mb-3 tx-15 text-white"> </h4>
                 </div>
                 <div class="pb-0 mt-0">
                     <div class="d-flex">
                         <div class="">
-                            <h4 class="tx-20 font-weight-bold mb-1 text-white">2</h4>
+                            <h4 class="tx-20 font-weight-bold mb-1 text-white"></h4>
 
                         </div>
 
@@ -64,12 +64,12 @@
         <div class="card overflow-hidden sales-card bg-danger-gradient">
             <div class="pl-3 pt-3 pr-3 pb-2 pt-0">
                 <div class="">
-                    <h4 class="mb-3 tx-16 text-white"> الاصناف </h4>
+                    <h4 class="mb-3 tx-16 text-white">  </h4>
                 </div>
                 <div class="pb-0 mt-0">
                     <div class="d-flex">
                         <div class="">
-                            <h4 class="tx-20 font-weight-bold mb-1 text-white">5</h4>
+                            <h4 class="tx-20 font-weight-bold mb-1 text-white"></h4>
 
                         </div>
 
@@ -83,12 +83,12 @@
         <div class="card overflow-hidden sales-card bg-warning-gradient">
             <div class="pl-3 pt-3 pr-3 pb-2 pt-0">
                 <div class="">
-                    <h6 class="mb-3 tx-16 text-white"> الطلبات</h6>
+                    <h6 class="mb-3 tx-16 text-white"> </h6>
                 </div>
                 <div class="pb-0 mt-0">
                     <div class="d-flex">
                         <div class="">
-                            <h4 class="tx-20 font-weight-bold mb-1 text-white">3</h4>
+                            <h4 class="tx-20 font-weight-bold mb-1 text-white"></h4>
 
                         </div>
 

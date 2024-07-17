@@ -17,7 +17,7 @@
     <div class="my-auto">
         <div class="d-flex">
             <h4 class="content-title mb-0 my-auto"> رؤية ورسالة </h4><span class="text-muted mt-1 tx-13 mr-2 mb-0">/ ااضافة
-                المرك </span>
+                المركز </span>
         </div>
     </div>
 
@@ -110,7 +110,7 @@
                                                                 @enderror
                                                         </div>
                                                         <div class="form-group col-md-6">
-                                                            <label>  >رؤية  المركز  بالانجليزي : <span class="text-danger">*</span></label>
+                                                            <label>  رؤية  المركز  بالانجليزي : <span class="text-danger">*</span></label>
                                                             <input type="text" name="vision" class="form-control" id="inputEmail5" value="{{$vision->vision}}">
                                                             @error('vision')
                                                             <span class="form-text text-danger">{{ $vision }}</s>

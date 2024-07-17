@@ -23,9 +23,9 @@ Route::get('lang/{lang}', [LocalizationController::class, 'index'])->name('lang.
 Route::view('/', 'welcome');
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard')->middleware('auth');
 
-Route::group(['prefix'=>'dashboard'],function () {
+Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
