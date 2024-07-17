@@ -91,7 +91,7 @@ class AboutController extends Controller
    
        
         $about->save();
-        $this->translate($request, 'Vision', $about->id);
+        $this->translate($request, 'About', $about->id);
         session::flash('success', 'تمت   الاضافة  بنجاح ');
         return redirect('dashboard/abouts');
 

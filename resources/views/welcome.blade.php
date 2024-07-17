@@ -80,7 +80,11 @@
                 <i class="bx bxl-dribbble"></i>
               </div>
               <h4><a href="">{{ trans('main.Vision') }}</a></h4>
+              @if(App::getlocale()== 'en')
               <p>{{ $visions->vision ?? '' }}</p>
+              @else
+              <p>{{ $visions->vision_ar ?? '' }}</p>
+              @endif
             </div>
           </div>
 
@@ -93,7 +97,11 @@
                 <i class="bx bx-file"></i>
               </div>
               <h4><a href="">{{trans('main.message-center')}}</a></h4>
+              @if(App::getlocale()== 'en')
               <p>{{$visions->message ?? '' }}</p>
+              @else
+              <p>{{$visions->message_ar ?? '' }}</p>
+              @endif
             </div>
           </div>
 
@@ -106,7 +114,11 @@
                 <i class="bx bx-tachometer"></i>
               </div>
               <h4><a href="">{{trans('main.values')}} </a></h4>
+              @if(App::getlocale()== 'en')
               <p>{{$visions->values ?? '' }}</p>
+              @else
+              <p>{{$visions->values_ar ?? '' }}</p>
+              @endif
             </div>
           </div>
         </div>

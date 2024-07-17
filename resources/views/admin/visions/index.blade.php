@@ -228,14 +228,14 @@
 
                                 <div class="form-group col-md-6">
                                     <label>رؤية  المركز بالعربي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="vision_ar" class="form-control" id="inputEmail5" value="{{old('vision_ar')}}">
+                                    <textarea type="text" name="vision_ar" class="form-control" id="inputEmail5" value="{{old('vision_ar')}}"></textarea>
                                     @error('vision_ar')
                                     <span class="form-text text-danger">{{ $vision_ar }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label> رؤية  المركز  بالانجليزي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="vision" class="form-control" id="inputEmail5" value="{{old('vision')}}">
+                                    <textarea type="text" name="vision" class="form-control" id="inputEmail5" value="{{old('vision')}}"></textarea>
                                     @error('vision')
                                     <span class="form-text text-danger">{{ $vision }}</s>
                                         @enderror
@@ -248,14 +248,14 @@
 
                                 <div class="form-group col-md-6">
                                     <label>رسالة  المركز بالعربي   : <span class="text-danger">*</span></label>
-                                    <input type="text" name="message_ar" class="form-control" id="inputEmail5" value="{{old('message_ar')}}">
+                                    <textarea type="text" name="message_ar" class="form-control" id="inputEmail5" value="{{old('message_ar')}}"></textarea>
                                     @error('message_ar')
                                     <span class="form-text text-danger">{{ $message_ar }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label> رسالة  المركز بالانجليزي   : <span class="text-danger">*</span></label>
-                                    <input type="text" name="message" class="form-control" id="inputEmail5" value="{{old('message')}}">
+                                    <textarea type="text" name="message" class="form-control" id="inputEmail5" value="{{old('message')}}"></textarea>
                                     @error('message')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
@@ -265,14 +265,14 @@
 
                                 <div class="form-group col-md-6">
                                     <label> قيم  المركز بالعربي  : <span class="text-danger">*</span></label>
-                                    <input type="text" name="values_ar" class="form-control" id="inputEmail5" value="{{old('values_ar')}}">
+                                    <textarea type="text" name="values_ar" class="form-control" id="inputEmail5" value="{{old('values_ar')}}"></textarea>
                                     @error('values_ar')
                                     <span class="form-text text-danger">{{ $values_ar }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>  قيم  المركز بالانجليزي  : <span class="text-danger">*</span></label>
-                                    <input type="text" name="values" class="form-control" id="inputEmail5" value="{{old('values')}}">
+                                    <textarea type="text" name="values" class="form-control" id="inputEmail5" value="{{old('values')}}"></textarea>
                                     @error('values')
                                     <span class="form-text text-danger">{{ $values }}</s>
                                         @enderror
