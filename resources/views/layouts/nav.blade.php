@@ -10,8 +10,13 @@
   <meta content=" للاستشارات والبحوث" name="keywords">
 
   <!-- Favicons -->
+  @if(empty($abouts->logo ))
   <link href="{{URL::asset('assets/img/logo/logo.jpg')}}" rel="icon">
   <link href="{{URL::asset('assets/img/logo/logo.jpg')}}" rel="apple-touch-icon">
+  @else
+  <link href="../uploads/abouts/{{$abouts->logo ?? ''}}" rel="icon">
+  <link href="../uploads/abouts/{{$abouts->logo ?? ''}}" rel="apple-touch-icon">
+  @endif
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
@@ -57,12 +62,15 @@
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex justify-content-between">
-
+      
       <div id="logo">
+        @if(empty($abouts->logo ))
         <h1><a href="{{url('/')}}"><span> <img src="{{URL::asset('assets/img/logo/logo.jpg')}}" width="60px" alt="مركز المفكر "></span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+        @else
+        <h1><a href="{{url('/')}}"><span> <img src="../uploads/abouts/{{$abouts->logo ?? ''}}" width="60px" alt="مركز المفكر "></span></a></h1>
+      @endif
       </div>
+      
 
       <nav id="navbar" class="navbar">
         <ul>

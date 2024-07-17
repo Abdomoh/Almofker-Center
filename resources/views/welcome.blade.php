@@ -421,7 +421,7 @@
         <div class="contact-phone">
           <i class="bi bi-phone"></i>
           <h3> {{trans('main.Phone Number')}}</h3>
-          <p><a href="tel:+249912145888">249912145888</a></p>
+          <p><a href="tel:{{$abouts->phone ?? ''}}">{{$abouts->phone ?? ''}}</a></p>
         </div>
       </div>
 
@@ -429,7 +429,7 @@
         <div class="contact-email">
           <i class="bi bi-envelope"></i>
           <h3> {{trans('main.Email')}}</h3>
-          <p><a href="mailto:almofker2022@gmail.com">almofker2022@gmail.com`</a></p>
+          <p><a href="mailto:{{$abouts->email ?? ''}}">{{$abouts->email ?? ''}}</a></p>
         </div>
       </div>
 
@@ -463,13 +463,20 @@
 </section><!-- End Contact Section -->
 <div class="whatsapp-icon">
         
-        
+     @if(empty($abouts->whatsapp))   
   <a href="https://wa.link/klzlry"><span class="ico-circle"><i class="bi bi-whatsapp"style="bottom: 20px;
   right: 20px;
    left: 20px;
 position: fixed;
 width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
-  
+  @else
+  <a href="{{$abouts->whatsapp}}"><span class="ico-circle"><i class="bi bi-whatsapp"style="bottom: 20px;
+    right: 20px;
+     left: 20px;
+  position: fixed;
+  width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
+  @endif
+
 </div> 
 
 
@@ -486,8 +493,8 @@ width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
             <h3>{{trans('main.center')}}</h3>
             <p>
              sudan-portsudan
-              <strong>{{trans('main.Phone Number ')}}:</strong> 249912145888<br>
-              <strong>{{trans('main.Email')}}:</strong> almofker2022@gmail.com`<br>
+              <strong> {{trans('main.Phone Number')}}:</strong> {{$abouts->phone ?? ''}}<br>
+              <strong>{{trans('main.Email')}}:</strong> {{$abouts->email ?? ''}}<br>
             </p>
           </div>
 
@@ -539,11 +546,11 @@ width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
-        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="{{$abouts->tweeter ?? ''}}" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="{{$abouts->facebook ?? ''}}" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="{{$abouts->Instagram ?? ''}}" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="{{$abouts->whatsapp ?? ''}}" class="google-plus"><i class="bx bxl-whatsapp"></i></a>
+        <a href="" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
   </footer><!-- End Footer -->
