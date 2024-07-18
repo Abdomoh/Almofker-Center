@@ -140,52 +140,34 @@
     <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-
-            <img src="assets/img/services/service1.jfif" class="testimonial-img" alt="">
-            <h3>{{__('main.Our-fields-title-1')}}</h3>
-
-            <p>
-              {{__('main.Our-fields-text-1')}}.
-
-            </p>
-          </div>
-        </div><!-- End testimonial item -->
-
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/services/service2.png" class="testimonial-img" alt="">
-            <h3>{{__('main.Our-fields-title-2')}}</h3>
-
-            <p>
-              {{__('main.Our-fields-text-2')}}.
-            </p>
-
-          </div>
-        </div><!-- End testimonial item -->
-        <div class="swiper-slide">
-          <div class="testimonial-item">
-            <img src="assets/img/services/service3.jfif" class="testimonial-img" alt="">
-            <h3>{{__('main.Our-fields-title-3')}}</h3>
-
-            <p>
-              {{__('main.Our-fields-text-3')}}.
-            </p>
-
-          </div>
-        </div><!-- End testimonial item -->
+       @foreach($fields as $field)
+       @if(App::getlocale()=='en')
         <div class="swiper-slide">
           <div class="testimonial-item">
             <img src="assets/img/services/service4.jfif" class="testimonial-img" alt="">
-            <h3>{{__('main.Our-fields-title-4')}}</h3>
+            <h3>{{$field->title}}</h3>
 
             <p>
-              {{__('main.Our-fields-text-4')}}.
+              {{$field->description}}
             </p>
 
           </div>
         </div><!-- End testimonial item -->
+        @else
+        <div class="swiper-slide">
+          <div class="testimonial-item">
+            <img src="assets/img/services/service4.jfif" class="testimonial-img" alt="">
+            <h3> {{$field->description_ar}}</h3>
+
+            <p>
+              {{$field->description_ar}}
+            </p>
+
+          </div>
+        </div><!-- End testimonial item -->
+        @endif
+
+        @endforeach
 
 
       </div>

@@ -360,7 +360,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>  الوصف بالانجليزي : <span class="text-danger">*</span></label>
-                                    <textarea type="text" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="{{old('description')}}"></textarea>
+                                    <textarea type="text" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" value="">{{old('description')}}</textarea>
                                     @error('description_ar')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\FieldsController;
 use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ViewController;
@@ -31,6 +32,7 @@ Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('abouts', AboutController::class);
     Route::resource('visions', VisionController::class);
+    Route::resource('fields', FieldsController::class);
     Route::resource('works', WorkController::class);
     Route::get('work/{id}', [WorkController::class, 'getShowWork']);
     Route::get('visits', [ViewController::class, 'index']);
