@@ -42,10 +42,7 @@ class FieldsController extends Controller
     public function store(StoreFieldRequest $request)
     {
         $input = $request->validated();
-        if ($input->fails()) {
-            $message = implode("\n", $input->errors()->all());
-            return back()->withErrors($message)->withInput();
-        }
+        
         $fields = Field::create($input);
         $input['slug'] = $this->createSlug('fields', $fields->id, $fields->message, 'fieldss');
         if ($request->file('image')) {
