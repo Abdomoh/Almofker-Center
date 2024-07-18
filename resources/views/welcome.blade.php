@@ -144,7 +144,7 @@
        @if(App::getlocale()=='en')
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/services/service4.jfif" class="testimonial-img" alt="">
+            <img src="../uploads/fields/{{$field->image}}" class="testimonial-img" alt="">
             <h3>{{$field->title}}</h3>
 
             <p>
@@ -156,8 +156,8 @@
         @else
         <div class="swiper-slide">
           <div class="testimonial-item">
-            <img src="assets/img/services/service4.jfif" class="testimonial-img" alt="">
-            <h3> {{$field->description_ar}}</h3>
+            <img src="../uploads/fields/{{$field->image}}" class="testimonial-img" alt="">
+            <h3> {{$field->title_ar}}</h3>
 
             <p>
               {{$field->description_ar}}
