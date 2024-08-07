@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ExpertController;
 use App\Http\Controllers\Admin\FieldsController;
 use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\ProfileController;
@@ -33,6 +34,7 @@ Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function () {
     Route::resource('abouts', AboutController::class);
     Route::resource('visions', VisionController::class);
     Route::resource('fields', FieldsController::class);
+    Route::resource('experts',ExpertController::class);
     Route::resource('works', WorkController::class);
     Route::get('work/{id}', [WorkController::class, 'getShowWork']);
     Route::get('visits', [ViewController::class, 'index']);

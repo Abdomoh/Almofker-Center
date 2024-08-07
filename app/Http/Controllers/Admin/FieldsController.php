@@ -44,7 +44,7 @@ class FieldsController extends Controller
         $input = $request->validated();
         
         $fields = Field::create($input);
-        $input['slug'] = $this->createSlug('fields', $fields->id, $fields->message, 'fieldss');
+        $input['slug'] = $this->createSlug('Field', $fields->id, $fields->message, 'fields');
         if ($request->file('image')) {
             $image_name = md5($fields->id . "app" . $fields->id . rand(1, 1000));
 
