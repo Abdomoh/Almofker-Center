@@ -16,11 +16,11 @@
 					<img alt="user-img" class="avatar avatar-xl brround" src="{{URL::asset('admin/img/profile.svg')}}"><span class="avatar-status profile-status bg-green"></span>
 				</div>
 				<div class="user-info">
-					<h4 class="font-weight-semibold mt-3 mb-0">
+					<h4 class="font-semibold mt-3 mb-0">
 						@auth
 						{{Auth::user()->name}}
 						@endauth
-					</h4>
+					</h>
 
 				</div>
 			</div>

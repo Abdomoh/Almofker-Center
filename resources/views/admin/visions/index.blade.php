@@ -35,7 +35,7 @@
         <div class="card mg-b-20">
             <div class="card-header pb-0">
                 <div class="">
-                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>&nbsp;اضافة بيانات المركز </button><br><br>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>&nbsp;  اضافة بيانات رؤية ورسالة المركز </button><br><br>
                 </div>
             </div>
             <div class="card-body">

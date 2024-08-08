@@ -293,83 +293,47 @@
      
     </div>
 
-    <div class="row">
-
+  <div class="row">
+@foreach ($experts as $expert)
+@if(App::getlocale()=='en')
       <div class="col-lg-6" data-aos="fade-up">
         <div class="testimonial-item">
           <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-1')}}</h3>
-          <h4>Ceo &amp; {{trans('main.Expert-panel-1-title')}}</h4>
+          <h3>{{$expert->name}}</h3>
+          <h4>Ceo &amp; {{$expert->job}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            {{trans('main.Expert-panel-1-text')}}.
+            {{$expert->brief}}.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
 
             
           </p>&nbsp;
           <a href="{{ URL::asset('assets/img/cv/hassin_cv.pdf') }}" download="hassin_cv"><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
+         
         </div>
       </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="testimonial-item mt-4 mt-lg-0">
-          <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-2')}}</h3>
-          <h4>{{trans('main.Expert-panel-2-title')}}</h4>
+      @else
+      <div class="col-lg-6" data-aos="fade-up">
+        <div class="testimonial-item">
+          <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+          <h3>{{$expert->name_ar}}</h3>
+          <h4>Ceo &amp; {{$expert->job_ar}}</h4>
           <p>
             <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            {{trans('main.Expert-panel-2-text')}}.
+            {{$expert->brief_ar}}.
             <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href="{{URL::asset('assets/img/cv/Sahar_cv.pdf')}}" download="Sahar_cv"><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
+
+            
+          </p>&nbsp;
+          <a href="/uploads/experts/{{ $expert->cv}}" download="hassin_cv"><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
+         
         </div>
       </div>
+      @endif
 
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="testimonial-item mt-4">
-          <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-4')}}</h3>
-          <h4>{{trans('main.Expert-panel-4-title')}}</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-.            {{trans('main.Expert-panel-4-text')}}.
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href="{{URL::asset('assets/img/cv/Rashid_cv.pdf')}}" download="cv_Hamad ">
-            <h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
-        </div>
-      </div>
-
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="testimonial-item mt-4">
-          <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-5')}}</h3>
-          <h4>{{trans('main.Expert-panel-5-title')}}</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            {{trans('main.Expert-panel-5-text')}}.
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href="{{URL::asset('assets/img/cv/Rashid_cv.pdf')}}" download="Rashid_cv">
-            <h3 class="text-primary"><i class="bi bi-download" >{{trans('main.cv')}}</i></h3></a>
-        </div>
-      </div>
-
+@endforeach
       
-      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="testimonial-item mt-4">
-          <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-          <h3>{{trans('main.Expert-panel-3')}}</h3>
-          <h4>Store Owner</h4>
-          <p>
-            <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-            <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-          </p>
-          <a href=""><h3 class="text-primary"><i class="bi bi-download"> {{trans('main.cv')}}</i></h3></a>
-        </div>
-      </div>
+
 
     </div>
 

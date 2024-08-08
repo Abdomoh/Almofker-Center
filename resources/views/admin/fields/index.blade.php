@@ -139,7 +139,7 @@
                         
                                         
                                                         <div class="form-group col-md-6">
-                                                            <label>  صورة     : <span class="text-danger">*</span></label>
+                                                            <label>   صورة   تعبر عن المجال  : <span class="text-danger">*</span></label>
                                                             <input type="file" name="image" class="form-control" id="inputEmail5" value="{{$field->image}}" >
                                                             @error('image')
                                                             <span class="form-text text-danger">{{ $messsage }}</s>
@@ -257,7 +257,7 @@
 
                 
                                 <div class="form-group col-md-6">
-                                    <label>  قيم  المركز بالانجليزي  : <span class="text-danger">*</span></label>
+                                    <label>     صورة تعبر عن المجال  : <span class="text-danger">*</span></label>
                                     <input type="file" name="image" class="form-control" id="inputEmail5" value="{{old('image')}}" required>
                                     @error('image')
                                     <span class="form-text text-danger">{{ $messsage }}</s>

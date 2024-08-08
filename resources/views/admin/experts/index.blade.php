@@ -40,13 +40,15 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
+                  
                     <table id="example1" class="table key-buttons text-md-nowrap" data-page-length='5'>
                         <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
                                 <th class="border-bottom-0">  اسم  الخبير بالعربي </th>
                                 <th class="border-bottom-0">اسم الخبير  بالانجليزي  </th>
-                                <th class="border-bottom-0"> المسمي الوظيفي </th>
+                                <th class="border-bottom-0"> المسمي الوظيفي  بالعربي</th>
+                                <th class="border-bottom-0"> المسمي الوظيفي  بالانجليزي</th>
                                 <th class="border-bottom-0">  نبذة عن الخبير بالعربي </th>
                                 <th class="border-bottom-0">  نبذة عن الخبير بالانجليزي </th>
                                 <th class="border-bottom-0">    السيرة الذاتية </th>
@@ -63,8 +65,9 @@
                             <tr>
                                 <td>{{$expert->id}}</td>
                              
+                                <td>{{$expert->name_ar}}</td>
                                 <td>{{$expert->name}}</td>
-                                <td>{{$expert->name}}</td>
+                                <td>{{$expert->job_ar}}</td>
                                 <td>{{$expert->job}}</td>
                                 <td>{!! Str::limit($expert->brief_ar) !!}</td>
                                 <td>{!! Str::limit($expert->brief) !!}</td>
@@ -104,7 +107,7 @@
                         
                                                         <div class="form-group col-md-6">
                                                             <label>   اسم الخبير  بالعربي : <span class="text-danger">*</span></label>
-                                                            <input type="text" name="name_ar" class="form-control" id="inputEmail5" value="{{$expert->name_ar}}">
+                                                            <input type="text" name="name_ar" class="form-control" id="inputEmail5" value="{{$expert->name_ar}}" required>
                                                             @error('title_ar')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
@@ -123,14 +126,14 @@
                         
                                                         <div class="form-group col-md-6">
                                                             <label>   المسمي الوظيفي   بالعربي : <span class="text-danger">*</span></label>
-                                                            <input type="text" name="job_ar" class="form-control" id="inputEmail5" value="{{$expert->job_ar}}">
-                                                            @error('title_ar')
+                                                            <input type="text" name="job_ar" class="form-control" @error('job_ar') is-invalid @enderror id="inputEmail5" value="{{$expert->job_ar}}" required>
+                                                            @error('job_ar')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label> المسمي الوظيفي   بالانجليزي : <span class="text-danger">*</span></label>
-                                                            <input type="text" name="job" class="form-control" id="inputEmail5" value="{{$expert->job}}">
+                                                            <input type="text" name="job" class="form-control" id="inputEmail5" value="{{$expert->job}}" required>
                                                             @error('title')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
@@ -143,14 +146,14 @@
                         
                                                         <div class="form-group col-md-6">
                                                             <label>   نبذة الخبير   بالعربي   : <span class="text-danger">*</span></label>
-                                                            <textarea type="text" name="brief_ar" class="form-control" id="inputEmail5" value="">{{$expert->brief_ar}}</textarea>
+                                                            <textarea type="text" name="brief_ar" class="form-control" id="inputEmail5" value="" required>{{$expert->brief_ar}}</textarea>
                                                             @error('description_ar')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label> نبذة عن الخبير بالانجليزي    : <span class="text-danger">*</span></label>
-                                                            <textarea type="text" name="brief" class="form-control" id="inputEmail5">{{$expert->brief}}</textarea>
+                                                            <textarea type="text" name="brief" class="form-control" id="inputEmail5" required>{{$expert->brief}}</textarea>
                                                             @error('description')
                                                             <span class="form-text text-danger">{{ $message }}</s>
                                                                 @enderror
@@ -161,10 +164,8 @@
                                         
                                                         <div class="form-group col-md-6">
                                                             <label>  صورة     : <span class="text-danger">*</span></label>
-                                                            <input type="file" name="cv" class="form-control" id="inputEmail5" value="{{$expert->cv}}" >
-                                                            @error('image')
-                                                            <span class="form-text text-danger">{{ $messsage }}</s>
-                                                                @enderror
+                                                            <input type="file" name="cv" class="form-control" id="inputEmail5" value="{{$expert->cv}}"  >
+                                                           
                                                         </div>
                                                     </div>
                         
@@ -241,14 +242,14 @@
                         
                                 <div class="form-group col-md-6">
                                     <label>   اسم الخبير  بالعربي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="name_ar" class="form-control" id="inputEmail5" value="{{old('name_ar')}}">
+                                    <input type="text" name="name_ar" class="form-control" id="inputEmail5" value="{{old('name_ar')}}" required>
                                     @error('name_ar')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label> اسم الخبير  بالانجليزي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="name" class="form-control" id="inputEmail5" value="{{old('name')}}">
+                                    <input type="text" name="name" class="form-control" id="inputEmail5" value="{{old('name')}}" required>
                                     @error('name')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
@@ -260,14 +261,14 @@
 
                                 <div class="form-group col-md-6">
                                     <label>   المسمي الوظيفي   بالعربي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="job_ar" class="form-control" id="inputEmail5" value="{{old('job_ar')}}">
+                                    <input type="text" name="job_ar" class="form-control" id="inputEmail5" value="{{old('job_ar')}}" required>
                                     @error('job_ar')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label> المسمي الوظيفي   بالانجليزي : <span class="text-danger">*</span></label>
-                                    <input type="text" name="job" class="form-control" id="inputEmail5" value="{{old('job')}}">
+                                    <input type="text" name="job" class="form-control" id="inputEmail5" value="{{old('job')}}" required>
                                     @error('job')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
@@ -280,7 +281,7 @@
                         
                                 <div class="form-group col-md-6">
                                     <label>   نبذة الخبير   بالعربي   : <span class="text-danger">*</span></label>
-                                    <textarea type="text" name="brief_ar" class="form-control" id="inputEmail5" value="">{{old('brief_ar')}}</textarea>
+                                    <textarea type="text" name="brief_ar" class="form-control" id="inputEmail5" value="" required>{{old('brief_ar')}}</textarea>
                                     @error('brief_ar')
                                     <span class="form-text text-danger">{{ $message }}</s>
                                         @enderror
@@ -299,9 +300,7 @@
                                 <div class="form-group col-md-6">
                                     <label>  صورة     : <span class="text-danger">*</span></label>
                                     <input type="file" name="cv" class="form-control" id="inputEmail5" value="{{old('cv')}}"  required>
-                                    @error('cv')
-                                    <span class="form-text text-danger">{{ $messsage }}</s>
-                                        @enderror
+                                   
                                 </div>
                             </div>
                             <div class="form-row">

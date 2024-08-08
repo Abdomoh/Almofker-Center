@@ -19,7 +19,7 @@ class Expert extends Model
         return $this->cv ? env('APP_URL') . 'uploads/experts' . $this->cv : null;
     }
 
-    public function getNameAttribute()
+    public function getNameArAttribute()
     {
         $translation = Translation::where('model', 'Expert')
             ->where('row_id', $this->attributes['id'])
@@ -28,7 +28,7 @@ class Expert extends Model
 
         return $translation ? $translation->value : null;
     }
-    public function getJobAttribute()
+    public function getJobArAttribute()
     {
         $translation = Translation::where('model', 'Expert')
             ->where('row_id', $this->attributes['id'])
@@ -38,7 +38,7 @@ class Expert extends Model
         return $translation ? $translation->value : null;
     }
 
-    public function getPriefAttribute()
+    public function getBriefArAttribute()
     {
         $translation = Translation::where('model', 'Expert')
             ->where('row_id', $this->attributes['id'])
