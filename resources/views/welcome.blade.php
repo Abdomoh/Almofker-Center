@@ -8,7 +8,7 @@
       <div class="carousel-inner" role="listbox">
 
         <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);   " dir="ltr">
+        <div class="carousel-item active" style="background-image: url(assets/img/slide/s1.jpg);   " dir="ltr">
           <div class="carousel-container">
             <div class="carousel-content animate__animated animate__fadeInUp">
               <h2><span>{{ trans('main.mofker-center') }}</span></h2>
