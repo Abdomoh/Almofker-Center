@@ -138,6 +138,7 @@ For consultations, research and public opinion polling',
   'Useful-Links' => 'Useful Links ',
   'Our-Services' => 'Our Services',
   'cv' => 'download cv',
+  'View'=>'View',
 
 
 

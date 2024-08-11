@@ -27,7 +27,7 @@ class ExpertRequest extends FormRequest
             'name' => 'required|string',
             'job' => 'required|string',
             'brief' =>  'required|string',
-            'cv' => 'required|mimes:pdf,text,word,pptx'
+            'cv' => 'required|mimes:pdf,text,Word,pptx'
             
         ];
     }
