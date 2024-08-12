@@ -1,4 +1,6 @@
 @extends('layouts.nav')
+
+
 @section('content')
 
   <!-- ======= Hero Section ======= -->
@@ -17,8 +19,6 @@
             </div>
           </div>
         </div>
-
-
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
@@ -35,6 +35,7 @@
   </section><!-- End Hero -->
 
   <main id="main">
+
 
     <!-- ======= About Us Section ======= -->
     <section id="about" class="about">
@@ -384,7 +385,8 @@
 
   <div class="container">
     <div class="form">
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+      <form action="{{route('contacts.store')}}" method="post" role="form" class="">
+        @csrf
         <div class="row">
           <div class="form-group col-md-6">
             <input type="text" name="name" class="form-control" id="name" placeholder="{{__('main.name')}} " required>
@@ -401,7 +403,8 @@
         </div>
 
         <br>
-        <div class="text-center"><button type="submit">ارسال </button></div>
+        
+        <div class="text-center"><button type="submit" class="btn btn-primary">ارسال </button></div>
       </form>
     </div>
 
@@ -508,6 +511,4 @@ width: 100px;height:100px;color:#1bbd36;   font-size: 32px;"></i></span></a>
 </body>
 
 </html>
-
-
 @stop

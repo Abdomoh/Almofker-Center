@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\WorkController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ViewController;
 use App\Http\Controllers\Admin\VisionController;
+use App\Http\Controllers\Admin\ContactController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LocalizationController;
 
@@ -23,6 +24,7 @@ use App\Http\Controllers\LocalizationController;
 
 Route::get('lang/{lang}', [LocalizationController::class, 'index'])->name('lang.switch');
 Route::view('/', 'welcome');
+Route::resource('contacts', ContactController::class);
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('auth');
@@ -35,7 +37,6 @@ Route::group(['prefix'=>'dashboard','middleware'=>'auth'],function () {
     Route::resource('visions', VisionController::class);
     Route::resource('fields', FieldsController::class);
     Route::resource('experts',ExpertController::class);
-    Route::resource('works', WorkController::class);
     Route::get('work/{id}', [WorkController::class, 'getShowWork']);
     Route::get('visits', [ViewController::class, 'index']);
 });
